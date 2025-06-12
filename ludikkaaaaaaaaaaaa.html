@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lúdica: Juegos Educativos</title>
+
+</head>
+<body>
+    <div class="tab">
+        <button class="tab-btn active" onclick="openGame('math')">Matemáticas</button>
+        <button class="tab-btn" onclick="openGame('chemistry')">Química</button>
+        <button class="tab-btn" onclick="openGame('physics')">Física</button>
+    </div>
+
+    <!-- JUEGO DE MATEMÁTICAS -->
+    <div id="math" class="game-container" style="display: block;">
+        <h1>Ecuaciones Relámpago ⏳</h1>
+        <p id="equation">3x + 5 = 20</p>
+        <input type="number" id="answer" placeholder="Respuesta (x=?)">
+        <button onclick="checkAnswer()">Comprobar</button>
+        <p id="result"></p>
+        <p id="timer">Tiempo: 30s</p>
+    </div>
+
+    <!-- JUEGO DE QUÍMICA -->
+    <div id="chemistry" class="game-container" style="display: none;">
+        <h1>Balancea y Gana 🧪</h1>
+        <p id="chem-equation">H₂ + O₂ → H₂O</p>
+        <div>
+            <input type="number" id="coef1" min="1" value="1"> H₂ + 
+            <input type="number" id="coef2" min="1" value="1"> O₂ → 
+            <input type="number" id="coef3" min="1" value="1"> H₂O
+        </div>
+        <button onclick="checkChemistry()">Comprobar</button>
+        <p id="chem-result"></p>
+    </div>
+
+    <!-- JUEGO DE FÍSICA -->
+    <div id="physics" class="game-container" style="display: none;">
+        <h1>Lanzamiento de Proyectiles 🚀</h1>
+        <canvas id="physics-game" width="500" height="300"></canvas>
+        <div>
+            <label>Ángulo: <input type="range" id="angle-slider" min="1" max="90" value="45"></label>
+            <span id="angle-value">45°</span><br>
+            <label>Velocidad: <input type="range" id="velocity-slider" min="10" max="100" value="50"></label>
+            <span id="velocity-value">50 m/s</span><br>
+            <button onclick="launchProjectile()">Lanzar</button>
+        </div>
+        <p id="physics-result"></p>
+    </div>
+
+    <script>
+        // ===== FUNCIONALIDAD DE PESTAÑAS =====
+        function openGame(gameName) {
+            const games = document.getElementsByClassName("game-container");
+            for (let i = 0; i < games.length; i++) {
+                games[i].style.display = "none";
+            }
+            document.getElementById(gameName).style.display = "block";
+
+            const tabs = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].className = tabs[i].className.replace(" active", "");
+            }
+            event.currentTarget.className += " active";
+        }
+
+        // ===== JUEGO DE MATEMÁTICAS =====
+        let timeLeft = 30;
+        let score = 0;
+        let timerInterval;
+
+        function generateEquation() {
+            const a = Math.floor(Math.random() * 5) + 1; // Coeficiente entre 1 y 5
+            const b = Math.floor(Math.random() * 10) + 1; // Término independiente
+            const c = a * (Math.floor(Math.random() * 5) + 1) + b; // Solución entera
+            document.getElementById("equation").textContent = `${a}x + ${b} = ${c}`;
+            return (c - b) / a; // Solución correcta (x)
+        }
+
+        let correctAnswer = generateEquation();
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timeLeft = 30;
+            document.getElementById("timer").textContent = `Tiempo: ${timeLeft}s`;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById("timer").textContent = `Tiempo: ${timeLeft}s`;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("result").textContent = "¡Se acabó el tiempo!";
+                }
+            }, 1000);
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseFloat(document.getElementById("answer").value);
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").textContent = "✅ ¡Correcto! +1 Punto";
+                score++;
+                timeLeft += 5; // Bonus de tiempo
+                correctAnswer = generateEquation();
+                document.getElementById("answer").value = "";
+            } else {
+                document.getElementById("result").textContent = "❌ Incorrecto, intenta de nuevo.";
+            }
+        }
+
+        startTimer();
+
+        // ===== JUEGO DE QUÍMICA =====
+        function checkChemistry() {
+            const coef1 = parseInt(document.getElementById("coef1").value);
+            const coef2 = parseInt(document.getElementById("coef2").value);
+            const coef3 = parseInt(document.getElementById("coef3").value);
+
+            // Verifica balanceo de H y O
+            const hBalanced = (coef1 * 2 === coef3 * 2); // H: 2 en reactivos y productos
+            const oBalanced = (coef2 * 2 === coef3 * 1);  // O: 2 en reactivos, 1 en productos
+
+            if (hBalanced && oBalanced) {
+                document.getElementById("chem-result").textContent = "✅ ¡Balance correcto!";
+                // Genera nueva ecuación
+                document.getElementById("chem-equation").textContent = 
+                    `H₂ + O₂ → H₂O`; // Puedes añadir más ecuaciones aleatorias
+            } else {
+                document.getElementById("chem-result").textContent = "❌ Sigue intentando...";
+            }
+        }
+
+        // ===== JUEGO DE FÍSICA =====
+        const canvas = document.getElementById("physics-game");
+        const ctx = canvas.getContext("2d");
+        let angle = 45;
+        let velocity = 50;
+
+        // Dibuja el escenario
+        function drawScene() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Dibuja el cañón (proyectil)
+            ctx.fillStyle = "red";
+            ctx.beginPath();
+            ctx.arc(50, 250, 10, 0, Math.PI * 2);
+            ctx.fill();
+            // Dibuja el blanco
+            ctx.fillStyle = "blue";
+            ctx.fillRect(400, 240, 20, 20);
+        }
+
+        // Actualiza los controles
+        document.getElementById("angle-slider").addEventListener("input", (e) => {
+            angle = e.target.value;
+            document.getElementById("angle-value").textContent = `${angle}°`;
+            drawScene();
+        });
+
+        document.getElementById("velocity-slider").addEventListener("input", (e) => {
+            velocity = e.target.value;
+            document.getElementById("velocity-value").textContent = `${velocity} m/s`;
+        });
+
+        // Lógica de lanzamiento (simplificada)
+        function launchProjectile() {
+            drawScene();
+            ctx.fillStyle = "black";
+            ctx.font = "16px Arial";
+            // Fórmula simplificada de alcance (sin gravedad real)
+            const distance = (velocity * velocity * Math.sin(2 * angle * Math.PI / 180)) / 9.8;
+            const targetDistance = 350; // Distancia al blanco en píxeles
+            const margin = 20;
+
+            if (Math.abs(distance - targetDistance) < margin) {
+                document.getElementById("physics-result").textContent = "✅ ¡Blanco alcanzado!";
+            } else {
+                document.getElementById("physics-result").textContent = "❌ Fallaste. Ajusta ángulo/velocidad.";
+            }
+        }
+
+        drawScene();
+    </script>
+</body>
+</html>

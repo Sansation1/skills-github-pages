@@ -1,0 +1,73 @@
+<?php
+require 'Conexion/config.php';
+if(isset($_POST["submit"])){
+    $usernameemail= $_POST['usernameemail'];
+    $password= $_POST['password'];
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username='$usernameemail' or email='$usernameemail'");
+    $row = mysqli_fetch_assoc($result);
+    if (mysqli_num_rows($result) > 0) {
+        if($password == $row["password"]){
+            $_SESSION["login"] = true;
+            $_SESSION["id"] = $row["id"];
+            header("Location: Index.php");
+        }
+        else{
+            echo
+            "<script>alert('Contraseña incorrecta');</script>";
+        }
+    } else {
+        echo
+    "<script>alert('Este usuario no esta registrado');</script>";
+    }
+    
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Introducción a los Videojuegos:">
+        <title>Login</title>
+        <link rel="stylesheet" href="CSS/Login.css"></link>
+        <link rel="website icon" type="png" href="images/GameHavenLogo.png" class="img2">
+</head>
+
+<body class="fondo3">
+        <section class="section2">
+            <div class="contenedor">
+                <div class="formulario">
+                    <form  method="post" autocomplete="off" action="#" class="login-form">
+                    <div class="borde">
+                    <h2 class="texto">Iniciar sesión en Game Haven</h2>
+                    </div>
+                    <div class="input-contenedor">
+                    
+                        <i class='bx bxs-user' ></i>
+                        <label for="usernameemail"></label>
+                        <img src="images/user.png" class="icono">
+                        <input type="text" name="usernameemail" id="usernameemail" required class="input1" placeholder="Usurio o Correo electronico"> 
+
+                      
+                    </div>
+    
+                    <div class="input-contenedor">
+                        <i class='bx bxs-lock-open' ></i>
+                         <label for="password" ></label>
+                         <img src="images/password.png" class="icono">
+                        <input type="password" name="password" id="password"  required class="input1" placeholder="Contraseña">
+                    </div>          
+                    <div>
+                    <button type="submit" name="submit" class="Iniciar" >Iniciar Seción</button>
+                    <div class="Registra">
+                        <h5>Si no tienes una cuenta con nosotros preciona el boton registrar</h5>
+                        <a href="Registration.php" class="Registrar">Registrar</a>
+                    </div>
+                </div>
+                </form>
+                </div>
+            </div>       
+        </section>
+</body>
+</html>

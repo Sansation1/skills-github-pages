@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/Style3.css">
+    <link rel="stylesheet" href="CSS/Menu.css">
+    <link rel="website icon" type="png" href="images/GameHavenLogo.png">
+</head>
+<body class="grid">
+<nav class="nav1">     
+    <a href="Index.php" id="top">
+        <img src="images/Logo.png" class="gamelog" alt="40px">
+    </a> 
+</nav>
+<nav class="nav2">
+    <label class="hamburger" for="btn-menu">
+            <input type="checkbox">
+            <svg viewBox="0 0 32 32">
+            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+            <path class="line" d="M7 16 27 16"></path>
+        </svg>
+    </label>    
+    <ul class="ul">
+        <li class="li"><a href="Speedruns.php" class="a">Speedruns</a></li>
+        <li class="li"><a href="Games.php" class="a">Games</a></li>
+        <li class="li"><a href="News.php" class="a">News</a></li>
+    </ul>
+</nav>
+<input type="checkbox" id="btn-menu">
+<div class="Menu_lateral">
+        <div class="cont-menu">
+            <label for="btn-menu" class="icon-close">
+                <input type="checkbox" class="a">
+                <svg viewBox="0 0 32 32">
+                    <path class="line2 line-top-bottom2" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line2" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+<nav>
+    <div class="profile">
+        <label for="file-input">
+            <input class="in" type="file" id="file-input" type="file" accept="image/*"/>
+            <img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt="Perfil de usuario" id="user-avatarr" onload="showToast()" class="image-preview">
+        </label>
+        <div id="toast" class="change-avatar">Imagen Cargada</div>
+    </div>
+    <div class="container">
+        <input checked="" class="checkbox" type="checkbox"> 
+        <div class="mainbox">
+            <div class="iconContainer">
+                <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" 
+                            class="search_icon">
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">    
+                            </path></svg>
+                        </div>
+                        <input class="search_input" placeholder="Searchs games" type="text">
+                    </div>
+                </div>  
+                <ul>
+                    <li><a href="Index.php">Inicio</a></li>
+                    <li><a href="Perfil.php">Perfil</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                  </ul>
+        </nav>
+    </div>
+</div>
+<main>
+<form id="descripcion" class="p">
+        <h1 class="borde">¡Bienvenidos a Game Haven</h1>
+        <div class="horizontal-lines"></div><br>
+    </form>
+  <!-- Sección News -->
+  <section id="news">
+    <h2>News</h2>
+    <p>Mantente al día con las últimas noticias del mundo de los videojuegos: lanzamientos, actualizaciones y más.</p>
+    <ul>
+      <li><a href="news/new-releases.html">Nuevos lanzamientos de juegos</a></li>
+      <li><a href="news/updates.html">Actualizaciones importantes</a></li>
+      <li><a href="news/events.html">Eventos de la comunidad</a></li>
+      <li><a href="news/rumors.html">Rumores sobre próximos títulos</a></li>
+    </ul>
+  </section>
+  <section id="exclusivas-industria">
+    <h2>Reflexión sobre las exclusividades en la industria de los videojuegos</h2>
+    <p>En una reciente entrevista, Yoshinori Kitase, productor de <em>Final Fantasy VII Rebirth</em>, destacó un tema clave en la industria de los videojuegos: las exclusividades. Kitase comentó que la tendencia de lanzar juegos exclusivos para ciertas plataformas podría ser un concepto del pasado. Según su opinión, los desarrolladores deben enfocarse en llegar al mayor número de jugadores posible, lo que implica lanzar los títulos en tantas plataformas como sea posible. Aunque los títulos más recientes de <em>Final Fantasy</em>, como <em>Final Fantasy VII Remake</em> y <em>Rebirth</em>, son exclusivos temporales para PS5, Square Enix ha anunciado que estos juegos eventualmente estarán disponibles en PC, lo que refuerza la idea de que la exclusividad puede ser más un obstáculo que una ventaja para los desarrolladores a largo plazo. Esta reflexión plantea importantes preguntas sobre el futuro de las plataformas y la evolución de los modelos de negocio en la industria del videojuego.</p>
+</section>
+
+<section id="desafios-industria-2025">
+    <h2>La industria del videojuego se enfrenta a desafíos en 2025: ¿Qué nos espera?</h2>
+    <p>La industria de los videojuegos, que continúa siendo una de las más rentables y en constante crecimiento, enfrenta desafíos clave para los próximos años. Se estima que, para finales de 2024, las ganancias superarán los 280.000 millones de dólares. Sin embargo, en medio de este auge económico, las cifras de despidos en el sector han alcanzado los 14.000 en el último año, lo que refleja la presión que enfrentan los desarrolladores, especialmente en términos de presupuestos elevados y expectativas de calidad. En 2025, uno de los lanzamientos más esperados es el de <em>GTA VI</em>, un título que podría determinar el rumbo de la industria. Un fracaso en este proyecto podría tener repercusiones profundas en muchas empresas que dependen de la rentabilidad de grandes franquicias. Este escenario pone de manifiesto la fragilidad de la industria frente a los desafíos económicos, los riesgos de grandes inversiones y las tensiones con el uso creciente de la inteligencia artificial en el desarrollo de videojuegos. Con el futuro de los videojuegos en juego, es crucial observar cómo los desarrolladores se adaptan a estos desafíos en los próximos años.</p>
+</section>
+
+<section id="juegos-indie-2025">
+    <h2>Los juegos indie más esperados para 2025</h2>
+    <p>Los videojuegos indie siempre han sido una parte fundamental de la innovación dentro de la industria, y en 2025, los jugadores tienen muchos títulos interesantes en el horizonte. Juegos como <em>Hyper Light Breaker</em>, un RPG de acción en mundo abierto que promete seguir la exitosa fórmula de <em>Hyper Light Drifter</em>, y <em>Mandragora</em>, un juego de rol de acción que invita a los jugadores a explorar un mundo oscuro y lleno de misterios, están en la lista de los más anticipados. Además, títulos como <em>MOUSE: P.I For Hire</em> y <em>Nivalis</em> ofrecen una variedad de experiencias, desde detectives resolviendo misterios en un mundo pixelado hasta la simulación de una ciudad futurista. Otros juegos como <em>Ratatan</em>, <em>Skate Story</em> y <em>Slay the Spire 2</em> están causando gran expectación gracias a sus mecánicas de juego innovadoras y sus promesas de llevar la experiencia de juego a nuevas alturas. Estos juegos indie destacan por su creatividad, sus historias únicas y sus enfoques frescos, lo que los convierte en una opción atractiva para cualquier amante de los videojuegos en 2025.</p>
+</section>
+
+<section id="team17-legado">
+    <h2>El legado de Team17 y la pérdida de un pionero de la industria</h2>
+    <p>Recientemente, la industria de los videojuegos perdió a una de sus figuras más importantes, el cofundador de Team17, el estudio británico responsable de títulos icónicos como <em>Worms</em> y <em>Alien Breed</em>. Esta triste noticia ha conmovido a la comunidad gamer, ya que Team17 fue uno de los estudios que, en sus inicios, definió muchos de los elementos que ahora consideramos básicos en los videojuegos. Su legado no solo se limita a sus juegos, sino también a su enfoque innovador y su capacidad para adaptar sus títulos a diferentes plataformas. La pérdida de uno de los pioneros de la industria marca el fin de una era, pero su impacto seguirá siendo recordado por todos los que disfrutaron de los juegos que marcaron una generación.</p>
+</section>
+
+<section id="amenazas-eventos-nintendo">
+    <h2>Desafíos legales: amenazas de muerte y cancelación de eventos de Nintendo</h2>
+    <p>Un reciente escándalo ha sacudido la comunidad gamer: un hombre fue arrestado después de enviar amenazas de muerte que llevaron a la cancelación de eventos importantes de Nintendo, incluido el Nintendo Live 2024. Este suceso pone de relieve los peligros y la tensión que a veces se generan en torno a los eventos más importantes del mundo de los videojuegos. Las amenazas contra los organizadores y participantes en estos eventos son un recordatorio de los riesgos que enfrentan las empresas y las comunidades en línea, así como de la importancia de mantener un entorno seguro y respetuoso. Este incidente también subraya la necesidad de tomar medidas de seguridad más estrictas en eventos masivos de videojuegos, para garantizar la integridad física y emocional de los involucrados.</p>
+</section>
+
+<section id="batman-monolith">
+    <h2>Filtraciones de la industria: el juego de Batman cancelado por Monolith Productions</h2>
+    <p>Una filtración reciente ha revelado detalles sobre un juego de Batman que fue cancelado antes de su lanzamiento. Monolith Productions, el estudio detrás de <em>La Tierra Media: Sombras de Mordor</em>, estaba trabajando en un juego en el universo de Batman, que iba a ser una aventura de acción en un mundo abierto. Sin embargo, el proyecto fue cancelado a favor del desarrollo de <em>La Tierra Media: Sombras de Mordor</em>, que finalmente se convertiría en uno de los títulos más populares de la década. La filtración ha dejado a los fanáticos preguntándose qué podría haber sido este proyecto, y cómo habría encajado en el mundo de Gotham. Esta historia es solo un ejemplo de cómo, en la industria de los videojuegos, muchos proyectos interesantes pueden ser abandonados por diversas razones, dejando solo la especulación de lo que podría haber sido.</p>
+</section>
+
+<section id="fortnite-cyberpunk">
+    <h2>Fortnite y Cyberpunk 2077: una nueva colaboración en el horizonte</h2>
+    <p>Una de las noticias más emocionantes para los fanáticos de <em>Fortnite</em> y <em>Cyberpunk 2077</em> es la confirmación de una colaboración entre ambos mundos. <em>Fortnite</em>, el popular juego de batalla real, se unirá al universo de <em>Cyberpunk 2077</em>, trayendo consigo nuevos personajes, atuendos y contenido relacionado con este aclamado RPG distópico. Este cruce de universos no solo ofrece a los jugadores de <em>Fortnite</em> nuevos elementos para personalizar sus avatares, sino que también introduce una nueva dimensión de narrativa y estética inspirada en el futurismo y la tecnología avanzada de <em>Cyberpunk 2077</em>. La colaboración promete ser un evento emocionante para los jugadores de ambos títulos, y se espera que atraiga a muchos fanáticos de ambos universos.</p>
+</section>
+
+ <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img  class="imgc" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAkFBMVEUAAAD///8MDAzk5OTZ2dlcXFzy8vIlJSVCQkLp6entGyTS0tK9vb0yMjJycnJ4eHjKysrn5+fsAADDw8P82tv95OUWFhbc3NzvLTVTU1MrKysKCgodHR2hoaGwsLCFhYXsAAw8PDxnZ2dJSUm0tLSLi4vvHij5vL7+6+zsABHtEx3wN0H+9fXxRUvzbXHwNj6siJdoAAACXUlEQVR4nO3af1uaQADA8cOfoZgCTeeyJGuuNbe9/3c35LDuuENAxSZ+P3/0PHh3cn4rFUsIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQr3HqW8G8VTrvkLWN4aS6BfNm6bxD1jZG2QfcIRaxKiFWBcSqgFgVEKsCYlVArL1aqswDblnIVXosfe1KfMyz3YN6P/kj95ZZRWtyRhbT6aIlpuJ+emSrvmMlY/UsIzeWWBPLPD1q3vjQMjJKRjxlVtVd6eeZttu92fLB6YbOkbWuIJYQ81CIR3f1QCzLrrLn6W5jjb2bTp9Yxq6y50liLb3nGbHMXWXP050I8bIMn9uXEesutkm+6uO7WLNObNirKdbTWIjb+Xj0/TKes9ZBFNw5QRQFX6yx5Gt/WFOsUzlTrK9vg+jH69tgkBOrTywt1uBnNCBW/OTZju0+aXbc7ZFrxkoQS39Ic+W2K4zlfug9FcZSL6R3836tZav13lgvyRnKxkr249ti+cp+zx7LfMWtGivOtf3ZCjaZ77geS+WV3NXMEuvoKjlKxRoZyw6IlfwSvp4wltxVI2M5zu9APYMcJ5Zl3tafvxvlSI43MJb5B/lDYunkeANjLW/fjRe52/p/Yq2U/Z49lqr4fdbnxzLPc2Gx5OcKxCoVSx77xJL2x5I53GuMVfb/s96vrmuL1bbsqrZYyWcEWa68GO745oi8NgzliKvelb5WqPPiW2WO4e44vWbzfHVU9WhuTN+VK9/QTHxjV6qTXhsCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaLJ/KXov1OopPCIAAAAASUVORK5CYII=" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="imgc" src="data:image/jpeg;base64,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" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="imgc" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAkFBMVEUAAAD///8MDAzk5OTZ2dlcXFzy8vIlJSVCQkLp6entGyTS0tK9vb0yMjJycnJ4eHjKysrn5+fsAADDw8P82tv95OUWFhbc3NzvLTVTU1MrKysKCgodHR2hoaGwsLCFhYXsAAw8PDxnZ2dJSUm0tLSLi4vvHij5vL7+6+zsABHtEx3wN0H+9fXxRUvzbXHwNj6siJdoAAACXUlEQVR4nO3af1uaQADA8cOfoZgCTeeyJGuuNbe9/3c35LDuuENAxSZ+P3/0PHh3cn4rFUsIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQr3HqW8G8VTrvkLWN4aS6BfNm6bxD1jZG2QfcIRaxKiFWBcSqgFgVEKsCYlVArL1aqswDblnIVXosfe1KfMyz3YN6P/kj95ZZRWtyRhbT6aIlpuJ+emSrvmMlY/UsIzeWWBPLPD1q3vjQMjJKRjxlVtVd6eeZttu92fLB6YbOkbWuIJYQ81CIR3f1QCzLrrLn6W5jjb2bTp9Yxq6y50liLb3nGbHMXWXP050I8bIMn9uXEesutkm+6uO7WLNObNirKdbTWIjb+Xj0/TKes9ZBFNw5QRQFX6yx5Gt/WFOsUzlTrK9vg+jH69tgkBOrTywt1uBnNCBW/OTZju0+aXbc7ZFrxkoQS39Ic+W2K4zlfug9FcZSL6R3836tZav13lgvyRnKxkr249ti+cp+zx7LfMWtGivOtf3ZCjaZ77geS+WV3NXMEuvoKjlKxRoZyw6IlfwSvp4wltxVI2M5zu9APYMcJ5Zl3tafvxvlSI43MJb5B/lDYunkeANjLW/fjRe52/p/Yq2U/Z49lqr4fdbnxzLPc2Gx5OcKxCoVSx77xJL2x5I53GuMVfb/s96vrmuL1bbsqrZYyWcEWa68GO745oi8NgzliKvelb5WqPPiW2WO4e44vWbzfHVU9WhuTN+VK9/QTHxjV6qTXhsCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaLJ/KXov1OopPCIAAAAASUVORK5CYII=" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<script src="JS/main.js"></script>
+<script src="JS/menu.js"></script>
+</main>
+<footer>
+    <p>&copy; 2024 Game Haven. Todos los derechos reservados.</p>
+</footer>
+</div>
+<script src="JS/menu.js"></script>
+</body>
+</html>

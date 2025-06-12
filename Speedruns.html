@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/Style3.css">
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="website icon" type="png" href="images/GameHavenLogo.png">
+</head>
+<body class="grid">
+<nav class="nav1">     
+    <a href="Index.php" id="top">
+        <img src="images/Logo.png" class="gamelog" alt="40px">
+    </a>
+    
+</nav>
+<nav class="nav2">
+    <label class="hamburger" for="btn-menu">
+            <input type="checkbox">
+            <svg viewBox="0 0 32 32">
+            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+            <path class="line" d="M7 16 27 16"></path>
+        </svg>
+    </label>    
+    <ul class="ul">
+        <li class="li"><a href="Speedruns.php" class="a">Speedruns</a></li>
+        <li class="li"><a href="Games.php" class="a">Games</a></li>
+        <li class="li"><a href="News.php" class="a">News</a></li>
+    </ul>
+</nav>
+<input type="checkbox" id="btn-menu">
+<div class="Menu_lateral">
+        <div class="cont-menu">
+            <label for="btn-menu" class="icon-close">
+                <input type="checkbox" class="a">
+                <svg viewBox="0 0 32 32">
+                    <path class="line2 line-top-bottom2" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line2" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+            <nav>
+                <div class="profile">
+                    <!-- Imagen del avatar -->
+                    <img id="user-avatar" src="images/avatar.png" alt="Avatar de usuario" class="avatar">
+                    <h2 class="username"><?php echo $row["name"];?></h2>
+                    
+                    <!-- Botón para cambiar la imagen -->
+                    <label for="avatar-input" class="change-avatar-btn">Cambiar Imagen</label>
+                    <input id="avatar-input" type="file" accept="image/*" style="display: none;">
+                </div>
+                <div class="container">
+                    <input checked="" class="checkbox" type="checkbox"> 
+                    <div class="mainbox">
+                        <div class="iconContainer">
+                            <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" 
+                            class="search_icon">
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">    
+                            </path></svg>
+                        </div>
+                        <input class="search_input" placeholder="Searchs games" type="text">
+                    </div>
+                </div>  
+                <ul>
+                    <li><a href="Index.php">Inicio</a></li>
+                    <li><a href="Perfil.php">Perfil</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                  </ul>
+        </nav>
+    </div>
+</div>
+<div class="foot">
+<section id="inicio">
+    <div class="contenido2">
+        <div class="contenido2" id="que es">
+        <h1 class="h1">¿Que es um Speedrun?</h1><br>
+        <p>Un speedrun es el acto de completar un videojuego o un objetivo dentro 
+            del juego lo más rápido posible. Los jugadores suelen competir para 
+            establecer récords y utilizan estrategias, glitches, y optimizaciones 
+            para reducir el tiempo al máximo.</p></div>
+                <div id="Características" class="contenido2">
+                    <h1 class="h1">Características Principales</h1>
+                    <div class="features">
+                        <div class="feature">
+                            <h2>Velocidad</h2>
+                            <p>El objetivo principal es completar el juego o un 
+                                objetivo específico en el menor tiempo posible. Esto requiere optimización 
+                                extrema en cada acción y decisión.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Precisión y Dominio</h2>
+                            <p>Los speedrunners deben dominar mecánicas del
+                                 juego, movimientos, y técnicas avanzadas para ejecutar sus estrategias con 
+                                 precisión milimétrica.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Planificación Estratégica</h2>
+                            <p>Cada speedrun implica una planificación detallada de rutas óptimas, qué objetivos 
+                                cumplir, y qué elementos ignorar para maximizar la eficiencia.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Uso de Glitches y Técnicas Avanzadas</h2>
+                            <p>Los jugadores aprovechan fallos (glitches) o comportamientos inesperados del juego 
+                                para ahorrar tiempo, como atravesar paredes o saltear niveles completos.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Categorías Definidas</h2>
+                            <p>Los speedruns están estructurados en categorías que varían en reglas y objetivos,
+                                 como Any%, 100%, o Glitchless, entre otras.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Competitividad y Comunidad</h2>
+                            <p>Los speedruns fomentan la competencia amistosa entre jugadores de todo el mundo, quienes
+                                 comparten sus tiempos y estrategias en plataformas como Speedrun.com.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Práctica Constante</h2>
+                            <p>Para lograr los mejores tiempos, los speedrunners dedican horas a practicar y perfeccionar
+                                 movimientos específicos, superando sus propios límites.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Gestión del Azar (RNG)</h2>
+                            <p>Muchos juegos contienen elementos aleatorios, y los speedrunners deben adaptarse o minimizar el 
+                                impacto del RNG (Random Number Generator) en sus carreras.</p>
+                        </div>
+                    <div class="feature">
+                            <h2>Herramientas de Seguimiento</h2>
+                            <p>Los jugadores utilizan herramientas como temporizadores (splits) para medir y analizar sus tiempos
+                                 por secciones del juego, identificando áreas para mejorar.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Documentación y Verificación</h2>
+                            <p>Los intentos de speedrun suelen ser grabados en video para validar los tiempos
+                                 logrados, especialmente si buscan establecer récords.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Uso de Glitches y Técnicas Avanzadas</h3>
+                            <p>
+                              Los jugadores aprovechan fallos (glitches) o comportamientos inesperados del juego para ahorrar tiempo, como atravesar paredes o saltar niveles completos.
+                            </p>
+                            <button id="toggle-video" onclick="toggleVideo()" class="button2">Ver video</button>
+                            <div id="video-container" style="display: none; margin-top: 10px;">
+                              <iframe 
+                                width="100%" 
+                                height="200" 
+                                src="https://www.youtube.com/shorts/aFPAzpA0NeI" 
+                                title="Explicación de Glitches y Técnicas Avanzadas" 
+                                frameborder="0" 
+                                allowfullscreen>
+                              </iframe>
+                            </div>
+                          </div>  <br>
+                </div></div>
+        <div class="contenido2">
+            <div id="Categorías" class="h1"><h2>Categorías de Speedruns</h2></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
+                        <th>Mejor Tiempo</th>
+                        <th>Poseedor del Récord</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Any%</td>
+                        <td>Completar el juego lo más rápido posible sin restricciones.</td>
+                        <td>00:32:15</td>
+                        <td class="record-holder">Player123</td>
+                    </tr>
+                    <tr>
+                        <td>100%</td>
+                        <td>Completar todos los objetivos y coleccionar todos los objetos del juego.</td>
+                        <td>01:45:30</td>
+                        <td class="record-holder">Player456</td>
+                    </tr>
+                    <tr>
+                        <td>Glitchless</td>
+                        <td>Completa el juego sin usar glitches, respetando las mecánicas originales.</td>
+                        <td>00:45:00</td>
+                        <td class="record-holder">Player789</td>
+                    </tr>
+                    <tr>
+                        <td>No Major Glitches</td>
+                        <td>Permite glitches menores que no alteran significativamente la progresión,
+                             prohibiendo aquellos que rompen la secuencia principa</td>
+                        <td>00:31:39</td>
+                        <td class="record-holder">Player78</td>
+                    </tr>
+                    <tr>
+                        <td>Low%</td>
+                        <td>Finalizar el juego con el menor número posible de ítems, mejoras u objetivos 
+                            completados.</td>
+                        <td>01:41:12</td>
+                        <td class="record-holder">Player78</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contenido2"><div class="contenido2" id="que es">
+            <h1 class="h1">¿Cómo se hace un Speedrun?</h1><br>
+            <p>Elegir el juego y la categoría: Investiga cuál es la más adecuada para ti.</p><br>
+            <p>Aprender las estrategias: Busca tutoriales y comunidades que compartan rutas optimizadas.</p><br>
+            <p>Practicar: Requiere repetición para perfeccionar movimientos y dominar los trucos.</p><br>
+            <p>Registrar tu tiempo: Utiliza nuestra plataforma para guardar y registrar tus marcas personales
+                 directamente en nuestra base de datos. Podrás compararlas con otros usuarios en tiempo real y 
+                 acceder a estadísticas detalladas de tu progreso.</p><br>
+                 <a href="Register_Speedruns.php">Has Click Aqui</a>
+
+        </div>
+    </div>
+</section>
+<!-- Botón "Volver arriba" -->
+<div class="subir">
+<button onclick="window.location.href='Speedruns.php#top'" class="button">  
+<svg class="svgIcon" viewBox="0 0 384 512">
+  <path
+    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+  ></path>
+</svg>
+</button></div>
+</a>
+</div>
+<footer>
+    <p>&copy; 2024 Game Haven. Todos los derechos reservados.</p>
+</footer>
+<script>
+    function toggleVideo() {
+const videoContainer = document.getElementById('video-container');
+const toggleButton = document.getElementById('toggle-video');
+
+if (videoContainer.style.display === 'none') {
+videoContainer.style.display = 'block';
+toggleButton.textContent = 'Ocultar video';
+} else {
+videoContainer.style.display = 'none';
+toggleButton.textContent = 'Ver video';
+}
+}
+  </script>   
+  <script src="JS/main.js"></script>
+  <script src="JS/menu.js"></script>
+</body>
+</html>
